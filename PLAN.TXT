@@ -1,0 +1,121 @@
+# ASTROLOJİKAL WEBSİTE GELİŞTİRME PLANI
+
+## AŞAMA 1: TEMEL YAPI VE KURULUM
+- [x] 1. Next.js 14 projesi oluştur ve gerekli bağımlılıkları ekle
+- [x] 2. Veritabanı şemalarını oluştur (kullanıcılar, rüyalar, tarot falları, katina falları, kahve falları, bloglar)
+- [x] 3. TypeScript tiplerini tanımla
+- [x] 4. Tema ve tasarım kütüphanesi seç (Tailwind CSS)
+- [x] Temel renk paleti ve tipografi belirleme
+- [ ] Favicon ve logo tasarımı
+
+## AŞAMA 2: TEMEL SAYFA YAPILARI
+- [x] 1. Header bileşeni oluştur
+- [x] 2. Footer bileşeni oluştur
+- [x] 3. Ana sayfa düzenini oluştur
+- [x] Hakkımızda sayfası yapısını oluştur
+- [x] Hizmetlerimiz sayfası yapısını oluştur
+- [x] Rüya yorumlama sayfası yapısını oluştur
+- [x] Tarot falı sayfası yapısını oluştur
+- [x] Katina falı sayfası yapısını oluştur
+- [x] Kahve falı sayfası yapısını oluştur
+- [x] Blog sayfası yapısını oluştur
+- [x] Sayfa yönlendirmeleri ve navigasyon
+
+## AŞAMA 3: KULLANICI YÖNETİMİ
+- [ ] 1. Kullanıcı kimlik doğrulama sistemini kur
+- [ ] 2. Şifre yenileme sistemi
+- [ ] 3. Kullanıcı dashboard tasarımı
+- [ ] 4. Kullanıcı geçmiş hizmetler sayfaları (Rüyalarım, Tarot Fallarım, Katina Fallarım, Kahve Fallarım)
+- [ ] 5. Üyelik sistemi için WhatsApp entegrasyonu
+
+## AŞAMA 4: RÜYA YORUMLAMA SİSTEMİ
+- [ ] 1. Rüya yorumu formu ve sayfası
+- [ ] 2. Gemini API bağlantısı
+- [ ] 3. Rüya yorumu için prompt şablonu oluştur
+- [ ] 4. JSON formatında yanıt alacak yapı oluştur
+- [ ] 5. Sonuç gösterimi ve veritabanına kayıt
+- [ ] 6. Üyelik kontrolü ve premium içerik için bulanıklaştırma
+
+## AŞAMA 5: TAROT FALI SİSTEMİ
+- [ ] 1. 72 kart tasarımı ve yüklenmesi
+- [ ] 2. Kart karıştırma animasyonu
+- [ ] 3. 3 kart seçme mekanizması
+- [ ] 4. Form tasarımı (doğum tarihi ve soru)
+- [ ] 5. Gemini API bağlantısı ve prompt şablonu
+- [ ] 6. Sonuç gösterimi ve veritabanına kayıt
+
+## AŞAMA 6: KATİNA FALI SİSTEMİ
+- [ ] 1. 65 kart tasarımı ve yüklenmesi
+- [ ] 2. Kart karıştırma animasyonu
+- [ ] 3. 10 kart seçme mekanizması ve ters gelme olasılığı (%12)
+- [ ] 4. Form tasarımı (soru)
+- [ ] 5. KatinaFaliAcilimi.txt ve KatinaKartlariAnlamlari.txt dosyaları oluştur
+- [ ] 6. Gemini API bağlantısı ve prompt şablonu
+- [ ] 7. Sonuç gösterimi ve veritabanına kayıt
+
+## AŞAMA 7: KAHVE FALI SİSTEMİ
+- [ ] 1. Kahve falı form tasarımı
+- [ ] 2. Fotoğraf yükleme sistemi
+- [ ] 3. Gemini API bağlantısı ve görüntü analizi
+- [ ] 4. Sonuç gösterimi ve veritabanına kayıt
+
+## AŞAMA 8: BLOG SİSTEMİ
+- [ ] 1. Blog listeleme sayfası
+- [ ] 2. Blog detay sayfası
+- [ ] 3. Admin için blog oluşturma arayüzü
+  - [ ] Manuel blog oluşturma formu
+  - [ ] Otomatik blog oluşturma seçenekleri
+    - [ ] Günlük burç yorumu
+    - [ ] Haftalık burç yorumu
+    - [ ] Aylık burç yorumu
+- [ ] 4. Görsel yükleme sistemi
+- [ ] 5. Otomatik URL ve meta veri oluşturma
+- [ ] 6. Sitemap.xml oluşturma ve güncelleme
+
+## AŞAMA 9: ASTRO ARAÇLAR
+- [ ] Burç hesaplayıcı
+- [ ] Gezegen pozisyonları
+- [ ] Uyumluluk analizi
+- [ ] Doğum haritası
+- [ ] Tarih dönüştürücü
+
+## AŞAMA 10: REKLAM ENTEGRASYONU
+- [ ] Google AdSense hesabı bağlantısı
+- [ ] Anasayfada reklam alanları
+- [ ] Blog yazılarında reklam alanları
+- [ ] Fal sonuçları sayfalarında reklam alanları
+- [ ] Reklam yüklemesinin performansa etkisini minimize etme
+
+## AŞAMA 11: SEO OPTİMİZASYONU
+- [ ] 1. Meta başlık ve açıklamaların her sayfa için özelleştirilmesi
+- [ ] 2. Canonical URL'ler
+- [ ] 3. Robot.txt dosyası
+- [ ] 4. Sitemap.xml dosyası
+- [ ] 5. Sayfa hızı optimizasyonu
+- [ ] 6. Mobil uyumluluk testleri
+- [ ] 7. Open Graph ve Twitter Card meta etiketleri
+
+## AŞAMA 12: TEST VE CİLALAMA
+- [ ] 1. Tüm özelliklerin kapsamlı test edilmesi
+- [ ] 2. Hata düzeltme
+- [ ] 3. Kullanıcı geri bildirimlerine göre düzenlemeler
+- [ ] 4. Performans optimizasyonu
+- [ ] 5. Güvenlik testleri
+- [ ] 6. Son tasarım düzeltmeleri
+
+## AŞAMA 13: LANSMAN
+- [ ] 1. Domain ve hosting ayarları
+- [ ] 2. SSL sertifikası
+- [ ] 3. Google Search Console kayıt
+- [ ] 4. Google Analytics kurulumu
+- [ ] 5. Sosyal medya hesapları oluşturma
+- [ ] 6. Siteyi yayına alma
+- [ ] 7. Ödeme sistemi entegrasyonu
+- [ ] 8. Admin paneli
+- [ ] 9. Bildirim sistemi
+- [ ] 10. Canlı sohbet desteği
+- [ ] 11. Kapsamlı test
+- [ ] 12. Performans optimizasyonu
+- [ ] 13. Güvenlik denetimi
+- [ ] 14. Domain ve hosting ayarları
+- [ ] 15. Production ortamına deploy 
