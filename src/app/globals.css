@@ -1,0 +1,343 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+:root {
+  --radius: 0.625rem;
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.145 0 0);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.145 0 0);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.145 0 0);
+  --primary: #702963;  /* Tarot mor */
+  --primary-foreground: oklch(0.985 0 0);
+  --secondary: #483D8B; /* Alacakaranlık mor */
+  --secondary-foreground: oklch(0.985 0 0);
+  --muted: oklch(0.97 0 0);
+  --muted-foreground: oklch(0.556 0 0);
+  --accent: #9370DB; /* Mistik mor */
+  --accent-foreground: oklch(0.985 0 0);
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: oklch(0.922 0 0);
+  --input: oklch(0.922 0 0);
+  --ring: oklch(0.708 0 0);
+  --chart-1: oklch(0.646 0.222 41.116);
+  --chart-2: oklch(0.6 0.118 184.704);
+  --chart-3: oklch(0.398 0.07 227.392);
+  --chart-4: oklch(0.828 0.189 84.429);
+  --chart-5: oklch(0.769 0.188 70.08);
+  --sidebar: oklch(0.985 0 0);
+  --sidebar-foreground: oklch(0.145 0 0);
+  --sidebar-primary: oklch(0.205 0 0);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.97 0 0);
+  --sidebar-accent-foreground: oklch(0.205 0 0);
+  --sidebar-border: oklch(0.922 0 0);
+  --sidebar-ring: oklch(0.708 0 0);
+}
+
+.dark {
+  --background: #1A1A2E; /* Kozmik arka plan */
+  --foreground: oklch(0.985 0 0);
+  --card: #111133; /* Gece gökyüzü */
+  --card-foreground: oklch(0.985 0 0);
+  --popover: #111133; /* Gece gökyüzü */
+  --popover-foreground: oklch(0.985 0 0);
+  --primary: #9370DB; /* Mistik mor */
+  --primary-foreground: oklch(0.985 0 0);
+  --secondary: #483D8B; /* Alacakaranlık mor */
+  --secondary-foreground: oklch(0.985 0 0);
+  --muted: oklch(0.269 0 0);
+  --muted-foreground: oklch(0.708 0 0);
+  --accent: #702963; /* Tarot mor */
+  --accent-foreground: oklch(0.985 0 0);
+  --destructive: oklch(0.704 0.191 22.216);
+  --border: oklch(1 0 0 / 10%);
+  --input: oklch(1 0 0 / 15%);
+  --ring: oklch(0.556 0 0);
+  --chart-1: oklch(0.488 0.243 264.376);
+  --chart-2: oklch(0.696 0.17 162.48);
+  --chart-3: oklch(0.769 0.188 70.08);
+  --chart-4: oklch(0.627 0.265 303.9);
+  --chart-5: oklch(0.645 0.246 16.439);
+  --sidebar: oklch(0.205 0 0);
+  --sidebar-foreground: oklch(0.985 0 0);
+  --sidebar-primary: oklch(0.488 0.243 264.376);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.269 0 0);
+  --sidebar-accent-foreground: oklch(0.985 0 0);
+  --sidebar-border: oklch(1 0 0 / 10%);
+  --sidebar-ring: oklch(0.556 0 0);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  
+  /* Astroloji temalı özel stiller */
+  .cosmic-bg {
+    @apply bg-gradient-to-b from-[#111133] to-[#1A1A2E];
+    background-image: radial-gradient(circle at 50% 50%, rgba(74, 122, 255, 0.1) 0%, rgba(10, 10, 40, 0) 70%);
+  }
+  
+  .stars-bg {
+    position: relative;
+  }
+  
+  .stars-bg::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+      radial-gradient(1px 1px at 25% 35%, white, transparent),
+      radial-gradient(1px 1px at 50% 75%, white, transparent),
+      radial-gradient(2px 2px at 75% 15%, white, transparent),
+      radial-gradient(1px 1px at 10% 85%, white, transparent),
+      radial-gradient(1.5px 1.5px at 30% 65%, white, transparent),
+      radial-gradient(1px 1px at 65% 80%, white, transparent),
+      radial-gradient(1.5px 1.5px at 85% 25%, white, transparent),
+      radial-gradient(1px 1px at 40% 10%, white, transparent),
+      radial-gradient(1.5px 1.5px at 95% 55%, white, transparent),
+      radial-gradient(1px 1px at 15% 45%, white, transparent);
+    z-index: -1;
+    pointer-events: none;
+    opacity: 0.5;
+  }
+  
+  .mystical-card {
+    @apply border border-[#9370DB]/30 bg-gradient-to-br from-[#1A1A2E] to-[#483D8B]/80 text-white shadow-lg;
+    box-shadow: 0 4px 20px -2px rgba(147, 112, 219, 0.2);
+  }
+  
+  .tarot-card {
+    @apply relative overflow-hidden rounded-lg border-2 border-[#702963]/50 bg-gradient-to-br from-[#111133] to-[#702963]/30 p-1 transition-all duration-300;
+  }
+  
+  .tarot-card:hover {
+    @apply border-[#702963] shadow-lg;
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px -5px rgba(112, 41, 99, 0.4);
+  }
+  
+  .zodiac-icon {
+    @apply inline-block text-[#FFD700];
+    filter: drop-shadow(0 0 3px rgba(255, 215, 0, 0.5));
+  }
+}
+
+/* Özel animasyonlar */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.float-animation {
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    filter: drop-shadow(0 0 2px rgba(147, 112, 219, 0.3));
+  }
+  50% {
+    filter: drop-shadow(0 0 10px rgba(147, 112, 219, 0.7));
+  }
+}
+
+.pulse-glow {
+  animation: pulse-glow 4s ease-in-out infinite;
+}
+
+@keyframes shine {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 240 5.9% 10%;
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+    --accent: 240 3.7% 15.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 240 4.9% 83.9%;
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+.cosmic-background {
+  background: radial-gradient(ellipse at top, #1B2735 0%, #090A0F 100%);
+}
+
+.stars-background {
+  background-image: 
+    radial-gradient(2px 2px at 20px 30px, #FFD700, rgba(0,0,0,0)),
+    radial-gradient(2px 2px at 40px 70px, #FFD700, rgba(0,0,0,0)),
+    radial-gradient(2px 2px at 50px 160px, #FFD700, rgba(0,0,0,0)),
+    radial-gradient(2px 2px at 90px 40px, #FFD700, rgba(0,0,0,0)),
+    radial-gradient(2px 2px at 130px 80px, #FFD700, rgba(0,0,0,0)),
+    radial-gradient(2px 2px at 160px 120px, #FFD700, rgba(0,0,0,0));
+  background-repeat: repeat;
+  background-size: 200px 200px;
+  animation: twinkle 5s ease-in-out infinite alternate;
+}
+
+@keyframes twinkle {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: -100px -100px;
+  }
+}
+
+.pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes pulse-glow {
+  from {
+    text-shadow: 0 0 5px #FFD700, 0 0 10px #FFD700, 0 0 15px #FFD700;
+  }
+  to {
+    text-shadow: 0 0 10px #FFD700, 0 0 20px #FFD700, 0 0 30px #FFD700;
+  }
+}
+
+.loader {
+  width: 48px;
+  height: 48px;
+  border: 5px solid #FFD700;
+  border-bottom-color: transparent;
+  border-radius: 50%;
+  display: inline-block;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes spotlight {
+  0% {
+    opacity: 0;
+    transform: translate(-72%, -62%) rotate(0deg);
+  }
+  100% {
+    opacity: 0.8;
+    transform: translate(-72%, -62%) rotate(360deg);
+  }
+}
+
+.image-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+@keyframes step-pulse {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(255, 215, 0, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 0 8px rgba(255, 215, 0, 0);
+  }
+}
